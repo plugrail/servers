@@ -1,0 +1,18 @@
+# Copy to .dev.vars (gitignored) for local `wrangler dev`.
+# TODO(1A-3): ADMIN_TOKEN guards POST /admin/ingest until plan="admin" API-key
+# verification replaces it (see src/ingest/admin-route.ts).
+ADMIN_TOKEN=change-me-local-dev-token
+
+# Optional. When unset, notify() logs and skips the webhook POST (see
+# src/ingest/notify.ts). Set this to a real Slack Incoming Webhook URL to test
+# notifications locally.
+# NOTIFY_WEBHOOK_URL=https://hooks.slack.com/services/XXX/YYY/ZZZ
+
+# Optional (1A-6 error monitoring). When unset, Sentry stays disabled and
+# exceptions are only visible via structured logs (console). See
+# docs/ops/observability.md for the real Sentry DSN setup.
+# SENTRY_DSN=https://xxxxx@oXXXXXX.ingest.us.sentry.io/XXXXXXX
+
+# Optional (1A-6). Gates GET /__debug/error, an intentional-error route used
+# to smoke-test the Sentry notification pipeline. Unset = the route 404s.
+# DEBUG_ERROR_TOKEN=change-me-local-dev-debug-token

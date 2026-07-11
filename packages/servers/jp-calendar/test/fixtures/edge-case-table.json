@@ -1,0 +1,196 @@
+{
+  "_meta": {
+    "purpose": "1B-4 検証済み事実表。全ケースは test/fixtures/syukujitsu-snapshot-2026-07-10.csv（内閣府CSVの実データスナップショット、2026-07-10取得）に対して直接 grep 突合して確認したもののみを収録する。expect_holiday:false のケースは「CSVにその日付の行が無い」ことをもって裏取りとする。",
+    "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+    "verified_against": "test/fixtures/syukujitsu-snapshot-2026-07-10.csv",
+    "codex_discrepancies": [
+      "codex の事前調査（1B-4.md Step 2 回答）は 2019-05-01 の CSV表記を「即位の日」、2019-10-22 を「即位礼正殿の儀」と予想したが、実CSVでは両日とも名称が「休日（祝日扱い）」だった。即位関連の一般名称は内閣府の解説ページ（gaiyou.html）の記述であり、syukujitsu.csv 本体には収録されていない。本事実表は実CSVの表記を正とする。"
+    ]
+  },
+  "cases": [
+    {
+      "date": "2020-02-24",
+      "expect_holiday": true,
+      "name_contains": "休日",
+      "category": "furikae",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "2020-02-23（天皇誕生日）が日曜のため、祝日法3条2項により翌月曜が振替休日。CSV表記は「休日」。"
+    },
+    {
+      "date": "2021-08-09",
+      "expect_holiday": true,
+      "name_contains": "休日",
+      "category": "furikae",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "東京五輪特措法で山の日が2021-08-08に移動、その8/8が日曜のため翌月曜が振替休日。"
+    },
+    {
+      "date": "2026-05-06",
+      "expect_holiday": true,
+      "name_contains": "休日",
+      "category": "furikae",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv"
+    },
+    {
+      "date": "2027-03-22",
+      "expect_holiday": true,
+      "name_contains": "休日",
+      "category": "furikae",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "2027-03-21（春分の日）が日曜のため翌月曜が振替休日。"
+    },
+    {
+      "date": "2019-08-12",
+      "expect_holiday": true,
+      "name_contains": "休日",
+      "category": "furikae",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "2019-08-11（山の日）が日曜のため翌月曜が振替休日。"
+    },
+    {
+      "date": "2019-11-04",
+      "expect_holiday": true,
+      "name_contains": "休日",
+      "category": "furikae",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "2019-11-03（文化の日）が日曜のため翌月曜が振替休日。"
+    },
+    {
+      "date": "2015-09-22",
+      "expect_holiday": true,
+      "name_contains": "休日",
+      "category": "national-holiday",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "祝日法3条3項（国民の休日）。敬老の日(9/21)と秋分の日(9/23)に挟まれて発生。CSV表記は「国民の休日」ではなく「休日」。"
+    },
+    {
+      "date": "2026-09-22",
+      "expect_holiday": true,
+      "name_contains": "休日",
+      "category": "national-holiday",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "2015-09-22 以来の「国民の休日」の次の発生。敬老の日(9/21)と秋分の日(9/23)に挟まれる。"
+    },
+    {
+      "date": "2019-05-01",
+      "expect_holiday": true,
+      "name_contains": "休日",
+      "category": "one-off-2019",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "一回限りの祝日（即位の日）。実CSV表記は「休日（祝日扱い）」（codexの事前予想「即位の日」とは不一致 — _meta.codex_discrepancies参照）。"
+    },
+    {
+      "date": "2019-10-22",
+      "expect_holiday": true,
+      "name_contains": "休日",
+      "category": "one-off-2019",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "一回限りの祝日（即位礼正殿の儀）。実CSV表記は「休日（祝日扱い）」（codexの事前予想「即位礼正殿の儀」とは不一致 — _meta.codex_discrepancies参照）。"
+    },
+    {
+      "date": "2019-04-30",
+      "expect_holiday": true,
+      "name_contains": "休日",
+      "category": "one-off-2019",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "祝日法3条3項。4/29（昭和の日）と5/1（一回限りの祝日）に挟まれて発生した国民の休日。"
+    },
+    {
+      "date": "2019-05-02",
+      "expect_holiday": true,
+      "name_contains": "休日",
+      "category": "one-off-2019",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "祝日法3条3項。5/1（一回限りの祝日）と5/3（憲法記念日）に挟まれて発生した国民の休日。"
+    },
+    {
+      "date": "2020-07-23",
+      "expect_holiday": true,
+      "name_contains": "海の日",
+      "category": "olympics-moved",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "東京五輪特措法により海の日が通常の7月第3月曜から移動。"
+    },
+    {
+      "date": "2020-07-24",
+      "expect_holiday": true,
+      "name_contains": "スポーツの日",
+      "category": "olympics-moved",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "体育の日から名称変更後のスポーツの日が10月の通常日程ではなく開会式前日に移動。"
+    },
+    {
+      "date": "2020-08-10",
+      "expect_holiday": true,
+      "name_contains": "山の日",
+      "category": "olympics-moved",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "東京五輪特措法により山の日が通常の8/11から移動。"
+    },
+    {
+      "date": "2021-07-22",
+      "expect_holiday": true,
+      "name_contains": "海の日",
+      "category": "olympics-moved",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv"
+    },
+    {
+      "date": "2021-07-23",
+      "expect_holiday": true,
+      "name_contains": "スポーツの日",
+      "category": "olympics-moved",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv"
+    },
+    {
+      "date": "2021-08-08",
+      "expect_holiday": true,
+      "name_contains": "山の日",
+      "category": "olympics-moved",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv"
+    },
+    {
+      "date": "2021-10-11",
+      "expect_holiday": false,
+      "category": "olympics-moved-absence",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "スポーツの日が2021年は7/23に移動したため、10月には祝日が一つも存在しない（月曜だが平日）。CSVに2021年10月の行が0件であることで裏取り。"
+    },
+    {
+      "date": "2020-10-12",
+      "expect_holiday": false,
+      "category": "olympics-moved-absence",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "2020年も同じ理由で10月に祝日が存在しない。CSVに2020年10月の行が0件であることで裏取り。"
+    },
+    {
+      "date": "2019-12-23",
+      "expect_holiday": false,
+      "category": "moved-emperor-birthday",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "天皇誕生日は2018年12/23が最後（2019年は改元により天皇誕生日が存在しない年、2020年から2/23で再開）。CSVに2019年12月の行が0件であることで裏取り。"
+    },
+    {
+      "date": "2026-07-10",
+      "expect_holiday": false,
+      "category": "plain-weekday",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "特異なメカニズムに関係しない通常の平日（金曜）のサニティチェック。"
+    },
+    {
+      "date": "1955-01-01",
+      "expect_holiday": true,
+      "name_contains": "元日",
+      "category": "data-range-boundary",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "CSV収録範囲の最古の行（下限境界）。"
+    },
+    {
+      "date": "2027-11-23",
+      "expect_holiday": true,
+      "name_contains": "勤労感謝の日",
+      "category": "data-range-boundary",
+      "source": "https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv",
+      "note": "CSV収録範囲の最新の行（上限境界）。"
+    }
+  ]
+}

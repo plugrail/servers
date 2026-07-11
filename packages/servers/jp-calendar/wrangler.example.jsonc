@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Copy this file to wrangler.jsonc and replace the D1 placeholder before
+  // running dev, migrations, or deploy. Type generation uses this safe example.
+  "name": "jp-calendar",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-07-10",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": { "enabled": true },
+  // Replace the placeholder with a D1 database you control. Apply this
+  // package's migrations before deploying; ADMIN_TOKEN is a Worker secret.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "jp-calendar",
+      "database_id": "<your-d1-database-id>",
+      "migrations_dir": "migrations"
+    }
+  ],
+  // Monthly Cabinet Office holiday CSV refresh (UTC).
+  "triggers": { "crons": ["0 19 1 * *"] }
+}

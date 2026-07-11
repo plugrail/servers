@@ -1,0 +1,37 @@
+{
+  "name": "@plugrail/jp-calendar",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plugrail/servers",
+    "directory": "packages/servers/jp-calendar"
+  },
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "types": "wrangler types --include-runtime=false -c wrangler.example.jsonc",
+    "pretypecheck": "wrangler types --include-runtime=false -c wrangler.example.jsonc",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p test/tsconfig.json",
+    "test": "vitest run",
+    "ingest:local": "node scripts/ingest-local.mjs",
+    "db:migrate:local": "wrangler d1 migrations apply jp-calendar --local",
+    "db:migrate:remote": "wrangler d1 migrations apply jp-calendar --remote"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "0.18.4",
+    "@cloudflare/workers-types": "^5.20260710.0",
+    "@types/node": "^22.20.1",
+    "typescript": "^5.9.3",
+    "vitest": "4.1.10",
+    "wrangler": "4.110.0"
+  },
+  "dependencies": {
+    "@plugrail/core": "workspace:*",
+    "zod": "4.4.3"
+  }
+}

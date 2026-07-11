@@ -1,0 +1,19 @@
+packages:
+  - "packages/*"
+  - "packages/servers/*"
+allowBuilds:
+  core-js-pure: false
+  esbuild: true
+  sharp: true
+  workerd: true
+minimumReleaseAgeExclude:
+  - '@cloudflare/vitest-pool-workers@0.18.4'
+  - '@cloudflare/workers-types@5.20260710.1'
+  - miniflare@4.20260708.1
+  - wrangler@4.110.0
+  - '@sentry/cloudflare@10.65.0'
+  - '@sentry/core@10.65.0'
+  - '@sentry/node-core@10.65.0'
+  - '@sentry/node@10.65.0'
+  - '@sentry/opentelemetry@10.65.0'
+  - '@sentry/server-utils@10.65.0'
