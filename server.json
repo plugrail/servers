@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "dev.plugrail/jp-calendar",
+  "title": "PlugRail Japanese Calendar",
+  "description": "Japanese holiday and business-day calculations using official Japan Cabinet Office data.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/plugrail/servers",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://jp-calendar.plugrail.dev/mcp"
+    }
+  ]
+}
