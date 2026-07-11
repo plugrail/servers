@@ -4,6 +4,7 @@
   "title": "PlugRail Japanese Calendar",
   "description": "Japanese holiday and business-day calculations using official Japan Cabinet Office data.",
   "version": "0.1.0",
+  "websiteUrl": "https://plugrail.dev",
   "repository": {
     "url": "https://github.com/plugrail/servers",
     "source": "github"
