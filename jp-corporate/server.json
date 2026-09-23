@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "dev.plugrail/jp-corporate",
+  "title": "PlugRail Corporate Number",
+  "description": "Japanese corporate number lookup using official National Tax Agency public data.",
+  "version": "0.1.0",
+  "websiteUrl": "https://plugrail.dev",
+  "repository": {
+    "url": "https://github.com/plugrail/servers",
+    "source": "github",
+    "subfolder": "jp-corporate"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://jp-corporate.plugrail.dev/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
