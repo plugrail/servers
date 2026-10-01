@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "dev.plugrail/jp-recall",
+  "title": "PlugRail JP Recall",
+  "description": "Search Japanese product recalls by keyword and category using public Consumer Affairs Agency data.",
+  "version": "0.1.0",
+  "websiteUrl": "https://plugrail.dev",
+  "repository": {
+    "url": "https://github.com/plugrail/servers",
+    "source": "github",
+    "subfolder": "jp-recall"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://jp-recall.plugrail.dev/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
